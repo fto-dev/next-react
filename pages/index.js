@@ -1,7 +1,24 @@
 import Head from 'next/head'
 import Image from 'next/image'
+import { serverSideTranslations } from 'next-i18next/serverSideTranslations'
+import nextI18NextConfig from '../next-i18next.config'
+import { useTranslation } from 'next-i18next';
+
+
+// process.env.localesFiles
+
+export async function getStaticProps({ locale }){
+  return {
+    props: {
+        ...(await serverSideTranslations(locale, ["common"], nextI18NextConfig ))
+    }
+  }
+}
 
 export default function Home() {
+
+  const { t, i18n } = useTranslation();
+
   return (
     <>
       <Head>
@@ -11,7 +28,7 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <main >
-        <div> TEST </div>
+        <div>{ t('selectLanguage') }</div>
       </main>
     </>
   )
