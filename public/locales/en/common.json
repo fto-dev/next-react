@@ -1,3 +1,13 @@
 {
-    "selectLanguage": "Select Language:"
+    "selectLanguage": "Select Language:",
+    "multipleContent": [
+        {
+            "title": "Blog Heading 1",
+            "description": "Lorem ipsum sit amet."
+        },
+        {
+            "title": "Blog Heading 2",
+            "description": "Lorem ipsum sit amet. 2"
+        }
+    ]
 }

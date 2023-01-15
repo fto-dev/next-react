@@ -1,0 +1,12 @@
+{
+    "homeHeading": "FR Homepage Heading Content",
+    "homeContent": [
+        {
+            "title": "FR Home Content Title 1",
+            "description": "FR Lorem ipsum sit amet.",
+            "image": [
+                { "src" : "/images/pexels-liane-cumming.jpeg", "alt" : "Photo by Liane  Cumming: https://www.pexels.com/photo/woman-in-hat-posing-in-car-15045086/" }
+            ]
+        }
+    ]
+}
