@@ -1,11 +1,18 @@
 /** @type {import('next').NextConfig} */
 
 const path = require('path')
+const fs = require('fs')
 const { i18n } = require('./next-i18next.config')
 
+const dirRelativeToPublicFolder = "locales/en";
+const directoryPath = path.resolve('./public', dirRelativeToPublicFolder);
+const files = fs.readdirSync(directoryPath);
 
 const nextConfig = {
   reactStrictMode: true,
+  env: {
+    localesFiles: [],
+  },
   i18n: {
     locales: ['en', 'de', 'fr'],
     defaultLocale: 'en',
@@ -27,5 +34,9 @@ const nextConfig = {
     return config;
   }
 }
+
+nextConfig.env.localesFiles = files.map(function(value) {
+  return value.split(".json")[0] ;
+})
 
 module.exports = nextConfig
