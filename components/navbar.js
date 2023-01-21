@@ -1,55 +1,68 @@
-import Link from 'next/link'
-import { serverSideTranslations } from 'next-i18next/serverSideTranslations'
-import nextI18NextConfig from '../next-i18next.config'
-import { useRouter } from 'next/router'
-import { useTranslation } from 'next-i18next';
+import Link from "next/link";
+import { serverSideTranslations } from "next-i18next/serverSideTranslations";
+import nextI18NextConfig from "../next-i18next.config";
+import { useRouter } from "next/router";
+import { useTranslation } from "next-i18next";
+import { useEffect, useState} from 'react';
+import GetMenu from './menu'
 
-
-export async function getStaticProps({ locale }){
+export async function getStaticProps({ locale }) {
   return {
     props: {
-        ...(await serverSideTranslations(locale, process.env.localesFiles, nextI18NextConfig ))
-    }
-  }
+      ...(await serverSideTranslations(
+        locale,
+        process.env.localesFiles,
+        nextI18NextConfig
+      )),
+    },
+  };
 }
 
 export default function Navbar() {
   const router = useRouter();
   const { locales, locale: activeLocale } = router;
   const { t } = useTranslation();
-  
+
   return (
     <>
-      <div className="container mx-auto px-1">
-        <div className="items-center md:flex mt-2 mb-2 pl-2 pr-2">
-          <div className="justify-start md:flex md:flex-auto ">
-              <Link href="/">
-                <a className="mr-7 whitespace-nowrap text-base font-medium text-gray-500 hover:text-gray-900"> HOME </a>
-              </Link>
-            {
-              process.env.localesFiles.map((page,index) => (
-                page != 'index' && page != 'common' ? 
-                <Link href={`/${page}`} key={index}>
-                  <a className="mr-7 whitespace-nowrap text-base font-medium text-gray-500 hover:text-gray-900"> { page.toUpperCase() } </a>
+      <nav className="navbar" role="navigation" aria-label="main navigation">
+        <div className="navbar-brand">
+          <a role="button" className="navbar-burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
+            <span aria-hidden="true"></span>
+            <span aria-hidden="true"></span>
+            <span aria-hidden="true"></span>
+          </a>
+        </div>
+
+        <div id="navbarBasicExample" className="navbar-menu">
+          <div className="navbar-start">
+            {GetMenu().map((page, index) =>
+              page != "index" ? (
+                <Link key={index} href={ page.name == 'index' ? '/' : `/${page.name}` } >
+                  <a className="navbar-item">
+                    { t(`${page.name}` ).toUpperCase() }
+                  </a>
                 </Link>
-                : ''
-              ))
-            }
+              ) : (
+                ""
+              )
+            )}
           </div>
 
-          <div className="justify-end md:flex md:flex-1 ">
-            <span className='text-gray-500'>  {t('selectLanguage')}</span>
-            {
-              locales.map((locale,index) => (
-                <Link href="/" locale={locale} key={index}> 
-                  <a className={`ml-8 first-letter:whitespace-nowrap text-base font-medium  hover:text-gray-900 ${activeLocale == locale ? 'text-red-500' : 'text-gray-500'}`}> { locale.toUpperCase() } </a>
-                </Link>
-              ))
-            }
+          <div className="navbar-end">
+            <span className="navbar-item"> {t("selectLanguage")} </span>
+            {locales.map((locale, index) => (
+              <Link href="/" key={index} locale={locale} >
+                <a className={`navbar-item ${
+                      activeLocale == locale ? "has-text-info" : ""
+                    }`}>
+                  {locale.toUpperCase()}
+                </a>
+              </Link>
+              ))}
           </div>
-          
         </div>
-      </div>
+      </nav>
     </>
-  )
+  );
 }
