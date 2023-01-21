@@ -1,12 +1,15 @@
 {
     "selectLanguage": "Sprache auswählen:",
+    "index": "Startseite",
+    "blog": "Bloggen",
+    "contact": "Kontakt",
     "multipleContent": [
         {
-            "title": "DE Blog Heading 1",
+            "title": "Blog-Überschrift 1",
             "description": "Lorem ipsum sit amet."
         },
         {
-            "title": "DE Blog Heading 2",
+            "title": "Blog-Überschrift 2",
             "description": "Lorem ipsum sit amet. 2"
         }
     ]

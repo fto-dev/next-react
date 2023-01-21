@@ -1,5 +1,8 @@
 {
     "selectLanguage": "Select Language:",
+    "index": "Home",
+    "blog": "Blog",
+    "contact": "Contact",
     "multipleContent": [
         {
             "title": "Blog Heading 1",
