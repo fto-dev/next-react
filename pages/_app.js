@@ -5,6 +5,8 @@ import nextI18NextConfig from '../next-i18next.config.js';
 import { useRouter } from 'next/router'
 import '../styles/globals.css'
 
+import 'bulma/css/bulma.min.css' 
+
 function App({ Component, pageProps }) {
   const router = useRouter();
     if (router.pathname == '/') {
