@@ -4,8 +4,8 @@ import { serverSideTranslations } from 'next-i18next/serverSideTranslations'
 import nextI18NextConfig from '../next-i18next.config'
 import { useTranslation } from 'next-i18next';
 
-import MultipleContent from '/components/multiple-content.js'
-import BlogCard from "/components/blog-card.js";
+import MultipleContent from '@/components/multiple-content.js'
+import BlogCard from "@/components/blog-card.js";
 
 
 export async function getStaticProps({ locale }){

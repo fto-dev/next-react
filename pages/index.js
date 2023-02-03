@@ -7,9 +7,9 @@ import { useTranslation } from "next-i18next";
 import { useState } from "react";
 
 //@todo: @ source alias add
-import MultipleContent from "/components/multiple-content.js";
+import MultipleContent from "@/components/multiple-content.js";
 
-import { StringMerge } from "../hooks/stringMerge";
+import { StringMerge } from "@/hooks/stringMerge";
 import { useEffect } from "react";
 
 import image from '../public/images/banner-wide.jpeg'

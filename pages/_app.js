@@ -1,5 +1,5 @@
 import '../styles/globals.css'
-import Layout from '../components/layout.js'
+import Layout from '@/components/layout.js'
 import { appWithTranslation } from 'next-i18next';
 import nextI18NextConfig from '../next-i18next.config.js';
 import { useRouter } from 'next/router'

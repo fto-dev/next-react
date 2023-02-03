@@ -1,6 +1,6 @@
 import Link from "next/link";
 import { useTranslation } from "next-i18next";
-import getAllRoutes from "../hooks/getAllRoutes";
+import getAllRoutes from "@/hooks/getAllRoutes";
  
 export async function getStaticProps({ locale }) {
   return {

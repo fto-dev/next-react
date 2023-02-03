@@ -5,7 +5,7 @@ import { useRouter } from "next/router";
 import { useTranslation } from "next-i18next";
 import Image from "next/image";
 import { useEffect, useState } from "react";
-import getAllRoutes from "../hooks/getAllRoutes";
+import getAllRoutes from "@/hooks/getAllRoutes";
 
 export async function getStaticProps({ locale }) {
   return {
