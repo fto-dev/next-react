@@ -1,3 +1,41 @@
 {
-    "blogHeading": "Blog Heading:"
+    "blogHeading": "Blog Heading:",
+    "blogItems": [
+        {
+            "blogId": "AB26A24R6U83V3",
+            "blogHeading": "Blog Heading:",
+            "blogDescription": "Lorem ipsum sit amet.", 
+            "image" : {
+                "src" : "/images/blog-1.jpeg", 
+                "alt" : "Photo by Liane  Cumming: https://www.pexels.com/photo/woman-in-hat-posing-in-car-15045086/" 
+            } 
+        },
+        {
+            "blogId": "AB26A24R6U83V3",
+            "blogHeading": "Blog Heading 2:",
+            "blogDescription": "Lorem ipsum sit amet.", 
+            "image" : {
+                "src" : "/images/blog-2.jpeg", 
+                "alt" : "Photo by Liane  Cumming: https://www.pexels.com/photo/woman-in-hat-posing-in-car-15045086/" 
+            } 
+        },
+        {
+            "blogId": "AB26A24R6U83V3",
+            "blogHeading": "Blog Heading 3:",
+            "blogDescription": "Lorem ipsum sit amet.", 
+            "image" : {
+                "src" : "/images/blog-3.jpeg", 
+                "alt" : "Photo by Liane  Cumming: https://www.pexels.com/photo/woman-in-hat-posing-in-car-15045086/" 
+            } 
+        },
+        {
+            "blogId": "AB26A24R6U83V3",
+            "blogHeading": "Blog Heading 3:",
+            "blogDescription": "Lorem ipsum sit amet.", 
+            "image" : {
+                "src" : "/images/blog-4.jpeg", 
+                "alt" : "Photo by Liane  Cumming: https://www.pexels.com/photo/woman-in-hat-posing-in-car-15045086/" 
+            } 
+        }
+    ]
 }

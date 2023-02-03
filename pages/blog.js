@@ -5,6 +5,7 @@ import nextI18NextConfig from '../next-i18next.config'
 import { useTranslation } from 'next-i18next';
 
 import MultipleContent from '/components/multiple-content.js'
+import BlogCard from "/components/blog-card.js";
 
 
 export async function getStaticProps({ locale }){
@@ -18,7 +19,7 @@ export async function getStaticProps({ locale }){
 export default function Blog() {
   const { t } = useTranslation(process.env.localesFiles);
   const router = useRouter();
-  const blogContent = t('blogContent', { returnObjects: true, ns: router.localeFile });
+  const blogContent = t('blogItems', { returnObjects: true, ns: router.localeFile });
 
   return (
     <>
@@ -29,11 +30,42 @@ export default function Blog() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <main className='mt-5'>
-        <div className="container mx-auto px-5">
-          <div className='text-3xl font-bold underline'> { t('blogHeading') } </div>  
+    
+      {/* <div className='text-3xl font-bold underline'> { t('blogHeading') } </div>   */}
+        <section className="section div-lower">
+          <div className="container">
 
-          <MultipleContent/>
-        </div>        
+            {
+            
+            blogContent.map((item, index) => (
+              <BlogCard
+                title={item.blogHeading}
+                description={item.description}
+                image={item.image.src}
+                imageAlt={item.image.alt}
+                link={item.blogId}
+                key={index}
+              />
+              
+             /*  {item.image.map((subItem, subIndex) => (
+                  <div className="mt-5" key={subIndex}>
+                    <Image
+                      src={subItem.src}
+                      alt={subItem.alt}
+                      width={360}
+                      height={540}
+                    />
+                  </div>
+                ))} */
+
+            ))}
+            
+            {  }
+
+          </div>
+
+          {/* <MultipleContent/> */}
+        </section>
       </main>
     </>
   )
